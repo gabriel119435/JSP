@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import domain.Facade;
-import domain.Pessoa;
 
 @WebServlet("/serv")
 public class Serv extends HttpServlet {
