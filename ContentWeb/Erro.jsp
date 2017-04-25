@@ -8,7 +8,7 @@
 
 
 
-	<form action="servErro" method="post">
+	<form action="Login.jsp" method="post">
 		<input type="submit" value="Voltar e corrigir" />
 	</form>
 
