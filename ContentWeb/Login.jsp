@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>FoRmUlArIo OrKuT</title>
+<title>Formulário</title>
 </head>
 <body>
 	<form action="serv" method="post">

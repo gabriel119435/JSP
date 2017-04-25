@@ -4,7 +4,7 @@
 <title>Erro cabuloso</title>
 </head>
 <body>
-	Faltou preencher o nome ou sexo, volta lá mano!
+	Faltou preencher o nome ou sexo!
 
 
 
