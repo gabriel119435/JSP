@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="domain.Pessoa"%>
-<%@page import="domain.Facade"%>
-<%@page import="javax.xml.ws.Response"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
