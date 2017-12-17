@@ -18,42 +18,37 @@ public class Serv extends HttpServlet {
 		super();
 	}
 
+	// used when browser tries to access web site
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		request.setAttribute("pessoas", Facade.getRepositorioFalso());
+		request.setAttribute("people", Facade.getAll());
 		request.getRequestDispatcher("Login.jsp").forward(request, response);
-
 	}
 
+	// used when form is send
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String nome, sexo, carro, foguete;
-
-		nome = request.getParameter("nome");
-		sexo = request.getParameter("sexo");
-		carro = request.getParameter("carro");
-		foguete = request.getParameter("foguete");
-		if (nome == "" || sexo == null) {
-			response.sendRedirect("Erro.jsp");
+		String name, sex, car, rocket;
+		name = request.getParameter("name");
+		sex = request.getParameter("sex");
+		car = request.getParameter("car");
+		rocket = request.getParameter("rocket");
+		if (name == "" || sex == null) {
+			response.sendRedirect("Error.jsp");
 			return;
 		}
-		sexo = Facade.letrar(sexo);
-		request.setAttribute("sexo", sexo);
-		if (carro == null)
-			// compara endereço de memoria equals compara
-			// conteudo
-			carro = "nao";
-
-		request.setAttribute("carro", carro);
-		if (foguete == null)
-			foguete = "nao";
-		request.setAttribute("foguete", foguete);
-
-		Facade.AdicionaPessoa(nome, sexo, carro, foguete);
-		request.setAttribute("pessoas", Facade.getRepositorioFalso());
-
+		sex = Facade.turnSexIntoLetter(sex);
+		request.setAttribute("sex", sex);
+		//'==' compares memory address, 'equals' compare content
+		if (car == null)
+			car = "no";
+		request.setAttribute("car", car);
+		if (rocket == null)
+			rocket = "no";
+		request.setAttribute("rocket", rocket);
+		
+		Facade.addPerson(name, sex, car, rocket);
+		request.setAttribute("people", Facade.getAll());
 		request.getRequestDispatcher("Login.jsp").forward(request, response);
 	}
 }

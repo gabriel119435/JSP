@@ -2,39 +2,36 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Formulário</title>
+<title>Form</title>
 </head>
 <body>
 	<form action="serv" method="post">
-		<textarea name="nome" wrap="hard" placeholder="Nome completo" ></textarea>
-		<br> <input type="radio" name="sexo" value="homem" >Homem<br>
-		<input type="radio" name="sexo" value="mulher" >Mulher<br>
-		<input type="radio" name="sexo" value="outro" >Outro<br>
-		<input type="checkbox" name="carro" value="sim">Tem carro<br>
-		<input type="checkbox" name="foguete" value="sim">Tem foguete<br>
+		<textarea name="name" placeholder="Complete name"></textarea>
+		<br> 
+		<input type="radio" name="sex" value="man">Man<br>
+		<input type="radio" name="sex" value="woman">Woman<br> <input
+			type="radio" name="sex" value="other">Other<br> <input
+			type="checkbox" name="car" value="yes">Has car<br> <input
+			type="checkbox" name="rocket" value="yes">Has rocket<br>
+		
 		<table border="1">
 			<tr>
-				<th>Nome</th>
-				<th>Sexo</th>
-				<th>Carro</th>
-				<th>Foguete</th>
+				<th>Name</th>
+				<th>Sex</th>
+				<th>Car</th>
+				<th>Rocket</th>
 			</tr>
-
-			<c:forEach items="${pessoas}" var="pessoa">
-
+			<c:forEach items="${people}" var="person">
 				<tr>
-					<td>${pessoa.nome}</td>
-					<td>${pessoa.sexo}</td>
-					<td>${pessoa.carro}</td>
-					<td>${pessoa.foguete}</td>
+					<td>${person.name}</td>
+					<td>${person.sex}</td>
+					<td>${person.car}</td>
+					<td>${person.rocket}</td>
 				</tr>
 			</c:forEach>
-
-
-
-
 		</table>
-		<br> <input type="submit" value="Envie para a tabela!">
+		
+		<br> <input type="submit" value="Send">
 	</form>
 </body>
 </html>

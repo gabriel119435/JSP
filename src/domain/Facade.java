@@ -2,30 +2,25 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import domain.Pessoa;
 
 public class Facade {
 
-	private static List<Pessoa> repositorioFalso = new ArrayList<Pessoa>();
+	private static List<Person> falseRepo = new ArrayList<Person>();
 
-	public static String somar1(String valor) {
-		return "1-" + valor;
-	}
-
-	public static String letrar(String valor) {
-		if (valor.equals("mulher"))
+	public static String turnSexIntoLetter(String valor) {
+		if (valor.equals("woman"))
+			return "W";
+		if (valor.equals("man"))
 			return "M";
-		if (valor.equals("homem"))
-			return "H";
 		return "O";
 	}
 
-	public static void AdicionaPessoa(String a, String b, String c, String d) {
-		repositorioFalso.add(new Pessoa(a, b, c, d));
+	public static void addPerson(String a, String b, String c, String d) {
+		falseRepo.add(new Person(a, b, c, d));
 	}
 
-	public static List<Pessoa> getRepositorioFalso() {
-		return repositorioFalso;
+	public static List<Person> getAll() {
+		return falseRepo;
 	}
 
 }
