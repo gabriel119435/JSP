@@ -12,6 +12,7 @@ import domain.Facade;
 
 @WebServlet("/serv")
 public class Serv extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
 	public Serv() {
@@ -34,7 +35,7 @@ public class Serv extends HttpServlet {
 		car = request.getParameter("car");
 		rocket = request.getParameter("rocket");
 		if (name == "" || sex == null) {
-			response.sendRedirect("Error.jsp");
+			request.getRequestDispatcher("WEB-INF/Error.jsp").forward(request, response);
 			return;
 		}
 		sex = Facade.turnSexIntoLetter(sex);
